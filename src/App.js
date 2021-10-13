@@ -8,9 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   const [users , setUsers] = useState([]);
 
-  function addUser(user){
-    setUsers([...users , user])
-  }
+  
+  
 
   function deleteUser(userId) {
     //loops through the users state and removes the user with the same id
@@ -23,8 +22,8 @@ function App() {
   }
   return (
     <>
-    <UserForm addUser={addUser}/>
-    <UserList data={users} deleteUser={deleteUser} />
+    <UserForm />
+    <UserList deleteUser={deleteUser} />
     </>
   );
 }
