@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import { v4 as uuid } from "uuid";
-import { addUser } from "./actions/userActions"
-import { connect } from "react-redux"
+import { addUser } from './actions/userActions';
+import {connect} from 'react-redux'
 
 
 function UserForm(props) {
@@ -28,12 +28,14 @@ function UserForm(props) {
      }
     }
      return(
-         <form onSubmit={(e) => handleSubmit(e)}>
+         <form onSubmit={(e) => handleSubmit(e)} className="form">
             <input
             type="text"
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="Enter Name" 
+            className="input"
              />
 
 
@@ -42,13 +44,16 @@ function UserForm(props) {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter Email"
+            className="input"
              />  
-          <label>Gen</label>
             <input
             type="text"
             name="gen"
             value={gen}
             onChange={(e) => setGen(e.target.value)}
+            placeholder="Your Gen"
+            className="input"
              /> 
 
             <input
@@ -59,8 +64,10 @@ function UserForm(props) {
          </form>
      );
 }
-const mapDispatchToProps ={
-  addNewUser :addUser,
-}
 
-export default connect (null, mapDispatchToProps) (UserForm);
+const mapDispatchToProps = {
+    addNewUser: addUser,
+};
+
+
+export default connect(null, mapDispatchToProps) (UserForm);
