@@ -25,6 +25,8 @@ const usersReducers =(state= initialState, action) => {
              });
 
              return {...state, users: editedUser};
+             case "GET_ALL_USERS":
+                 return {users: action.payload}
              default:
                   return state;
      }

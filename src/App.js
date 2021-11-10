@@ -1,13 +1,20 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserForm from './UserForm';
 import UserList from './UserList';
+import { connect } from "react-redux";
+import { getAllUsers } from "./actions/userActions";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-function App() {
+function App(props) {
   const [users , setUsers] = useState([]);
+
+ useEffect(()=>{
+   props.getAllUsers()
+ })
+
 
   
   function deleteUser(userId) {
@@ -36,5 +43,8 @@ function App() {
     </>
   );
 }
+const mapDispatchToProps = {
+  getAllUsers
+} 
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);

@@ -34,7 +34,7 @@ function UserForm(props) {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder="Enter Name" 
+            placeholder="Full Name" 
             className="input"
              />
 
@@ -44,7 +44,7 @@ function UserForm(props) {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter Email"
+            placeholder="Email"
             className="input"
              />  
             <input
@@ -52,7 +52,7 @@ function UserForm(props) {
             name="gen"
             value={gen}
             onChange={(e) => setGen(e.target.value)}
-            placeholder="Your Gen"
+            placeholder="Gen"
             className="input"
              /> 
 
